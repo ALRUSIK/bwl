@@ -17,6 +17,15 @@
                 <label for="name">Full Name</label>
             </div>
             <div class="form-field">
+                <input type="tel" id="phone" name="phone" placeholder="" 
+                pattern="\(\d{3}\) - \d{3} - \d{4}" required title="">
+                <label for="phone">Phone Number</label>
+            </div>
+            <div class="form-field">
+                <input type="email" id="email" name="email" placeholder="" required>
+                <label for="email">Email Address</label>
+            </div>
+            <div class="form-field">
                 <input type="text" id="experience" name="experience" placeholder=" " required>
                 <label for="experience">Years of Driving Experience</label>
             </div>
@@ -33,6 +42,22 @@
                 <label for="availability">Availability</label>
             </div>
             <div class="form-field">
+                <label for="driverLicense" class="file-label">Driver's License </label>
+                <div class="custom-file-upload">
+                    <input type="file" id="driverLicense" name="driverLicense" accept="image/*,application/pdf" required>
+                    <span id="driverLicenseFileName"></span>
+                    <button type="button" onclick="document.getElementById('driverLicense').click()">Choose File</button>
+                </div>
+            </div>
+            <div class="form-field">
+                <label for="medicalCertificate" class="file-label">Medical Certificate </label>
+                <div class="custom-file-upload">
+                    <input type="file" id="medicalCertificate" name="medicalCertificate" accept="image/*,application/pdf" required>
+                    <span id="medicalCertificateFileName"></span>
+                    <button type="button" onclick="document.getElementById('medicalCertificate').click()">Choose File</button>
+                </div>
+            </div>
+            <div class="form-field">
                 <textarea id="referral" name="referral" placeholder=" "></textarea>
                 <label for="referral">How did you hear about us?</label>
             </div>
@@ -42,5 +67,26 @@
     <div class="image-container">
         <!-- Image will be set via CSS -->
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var driverLicenseInput = document.getElementById('driverLicense');
+    var medicalCertificateInput = document.getElementById('medicalCertificate');
+
+    driverLicenseInput.addEventListener('change', function() {
+        var fileName = driverLicenseInput.files.length > 0 ? driverLicenseInput.files[0].name : 'No file chosen';
+        document.getElementById('driverLicenseFileName').textContent = fileName;
+    });
+
+    medicalCertificateInput.addEventListener('change', function() {
+        var fileName = medicalCertificateInput.files.length > 0 ? medicalCertificateInput.files[0].name : 'No file chosen';
+        document.getElementById('medicalCertificateFileName').textContent = fileName;
+    });
+    document.getElementById('phone').addEventListener('input', function (e) {
+    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+    e.target.value = !x[2] ? x[1] : '(' + x[1] + ') - ' + x[2] + (x[3] ? ' - ' + x[3] : '');
+});
+});
+    </script>
+        
 </body>
 </html>

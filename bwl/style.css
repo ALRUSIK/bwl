@@ -44,6 +44,7 @@ p {
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 textarea,
 .form-field select {
     width: 100%;
@@ -74,6 +75,7 @@ textarea,
 
 input[type="text"]:focus,
 input[type="email"]:focus,
+input[type="tel"]:focus,
 textarea:focus,
 .form-field select:focus {
     outline: none;
@@ -82,10 +84,12 @@ textarea:focus,
 
 input[type="text"]:focus ~ label,
 input[type="email"]:focus ~ label,
+input[type="tel"]:focus ~ label, /* Make sure to include this */
 textarea:focus ~ label,
 .form-field select:focus ~ label,
 input[type="text"]:not(:placeholder-shown) ~ label,
 input[type="email"]:not(:placeholder-shown) ~ label,
+input[type="tel"]:not(:placeholder-shown) ~ label, /* Make sure to include this */
 textarea:not(:placeholder-shown) ~ label,
 .form-field select:not([value=""]) ~ label {
     top: -20px;
@@ -107,5 +111,46 @@ button {
 }
 
 button:hover {
+    background-color: #0056b3;
+}
+.file-label {
+    display: block;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none; /* Hide the default input */
+}
+
+.custom-file-upload span {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #999;
+    display: inline-block;
+    min-width: 200px; /* You can adjust this width */
+}
+
+.custom-file-upload button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.custom-file-upload button:hover {
     background-color: #0056b3;
 }
