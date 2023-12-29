@@ -8,7 +8,10 @@ body {
     align-items: center;
     height: 100vh;
 }
-
+.contact-container h2 {
+    text-align: center; /* Center the header text within its container */
+    /* Add any other styling needed for the header here */
+}
 .application-container {
     display: flex;
     width: 80%; /* Adjust the width as needed */
@@ -29,14 +32,16 @@ body {
 
 .image-container {
     width: 50%; /* Half the width of the application-container */
-    background-image: url('C:\\Users\\SAFETY-1\\Desktop\\bwl\\img\\bg.jpeg'); /* Replace with your image path */
+    background-image: url('C:\\Users\\SAFETY-1\\Desktop\\bwl\\img\\bg1.jpeg');
     background-size: cover;
     background-position: center;
+}
+
 p {
     text-align: center;
     margin-bottom: 20px;
 }
-}
+
 .form-field {
     position: relative;
     margin-bottom: 20px;
@@ -56,13 +61,7 @@ textarea,
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-}
-
-.form-field#availability-field select {
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px top 50%;
-    background-size: 12px;
+    box-sizing: border-box; /* Ensures padding and borders are included in the width */
 }
 
 .form-field label {
@@ -84,12 +83,12 @@ textarea:focus,
 
 input[type="text"]:focus ~ label,
 input[type="email"]:focus ~ label,
-input[type="tel"]:focus ~ label, /* Make sure to include this */
+input[type="tel"]:focus ~ label,
 textarea:focus ~ label,
 .form-field select:focus ~ label,
 input[type="text"]:not(:placeholder-shown) ~ label,
 input[type="email"]:not(:placeholder-shown) ~ label,
-input[type="tel"]:not(:placeholder-shown) ~ label, /* Make sure to include this */
+input[type="tel"]:not(:placeholder-shown) ~ label,
 textarea:not(:placeholder-shown) ~ label,
 .form-field select:not([value=""]) ~ label {
     top: -20px;
@@ -113,6 +112,7 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
 .file-label {
     display: block;
     color: #333;
@@ -138,19 +138,58 @@ button:hover {
     background-color: #fff;
     color: #999;
     display: inline-block;
-    min-width: 200px; /* You can adjust this width */
+    width: calc(100% - 22px); /* Adjust width to match the padding and border of the button */
+    box-sizing: border-box;
 }
 
 .custom-file-upload button {
     padding: 10px 20px;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #007bff;
     color: white;
     cursor: pointer;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 .custom-file-upload button:hover {
     background-color: #0056b3;
 }
+
+/* Adjust the file upload container */
+.custom-file-upload {
+    display: flex;
+    justify-content: space-between; /* Adjust this as needed */
+    align-items: center;
+    gap: 10px;
+}
+
+/* Fix for the select field arrow overlap issue */
+.form-field select {
+    -webkit-appearance: none; /* For iOS */
+    -moz-appearance: none; /* For Firefox */
+    appearance: none; /* For modern browsers */
+    position: relative;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px;
+}
+
+/* Additional style for label movement on focus within the select field's parent .form-field */
+.form-field:focus-within label {
+    top: -20px;
+    left: 10px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+/* Ensure consistent sizing for file upload spans and buttons */
+.custom-file-upload span,
+.custom-file-upload button {
+    width: calc(100% - 22px); /* Adjust width to match the input fields, accounting for padding */
+    box-sizing: border-box;
+}
+
+/* Rest of your existing styles below... */
