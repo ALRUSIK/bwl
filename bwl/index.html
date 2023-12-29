@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Application Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="application-container">
+        <div class="contact-container">
+            <h2>Driver Application</h2>
+            <p>Please fill out the form below to apply as a driver.</p>
+            <form id="contact-form">
+            <div class="form-field">
+                <input type="text" id="name" name="name" placeholder=" " required>
+                <label for="name">Full Name</label>
+            </div>
+            <div class="form-field">
+                <input type="text" id="experience" name="experience" placeholder=" " required>
+                <label for="experience">Years of Driving Experience</label>
+            </div>
+            <div class="form-field">
+                <input type="text" id="license" name="license" placeholder=" " required>
+                <label for="license">Driver's License Number</label>
+            </div>
+            <div class="form-field" id="availability-field">
+                <select id="availability" name="availability" required>
+                    <option value="">Select Availability</option>
+                    <option value="full-time">Full-time</option>
+                    <option value="part-time">Part-time</option>
+                </select>
+                <label for="availability">Availability</label>
+            </div>
+            <div class="form-field">
+                <textarea id="referral" name="referral" placeholder=" "></textarea>
+                <label for="referral">How did you hear about us?</label>
+            </div>
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+    <div class="image-container">
+        <!-- Image will be set via CSS -->
+    </div>
+</body>
+</html>

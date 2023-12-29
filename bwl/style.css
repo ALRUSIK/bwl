@@ -1,0 +1,111 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.application-container {
+    display: flex;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 1200px; /* Maximum width of the container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden; /* Ensures the border-radius is applied */
+}
+
+.contact-container {
+    background: #fff;
+    padding: 30px;
+    width: 50%; /* Half the width of the application-container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-container {
+    width: 50%; /* Half the width of the application-container */
+    background-image: url('C:\\Users\\SAFETY-1\\Desktop\\bwl\\img\\bg.jpeg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+}
+.form-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+.form-field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-field#availability-field select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px;
+}
+
+.form-field label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    transition: all 0.3s ease;
+    color: #999;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+.form-field select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+input[type="text"]:focus ~ label,
+input[type="email"]:focus ~ label,
+textarea:focus ~ label,
+.form-field select:focus ~ label,
+input[type="text"]:not(:placeholder-shown) ~ label,
+input[type="email"]:not(:placeholder-shown) ~ label,
+textarea:not(:placeholder-shown) ~ label,
+.form-field select:not([value=""]) ~ label {
+    top: -20px;
+    left: 10px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
